@@ -281,7 +281,7 @@ PCC.conflicts <-
         # can in fact be empty
         if (length(edgelist) != 0) {
             myNetwork = as.network(edgelist, directed = FALSE, matrix.type = "edgelist")  #Important remark here : not specifying matrix.type = edgelist gave, occasionnaly, weird errors, mainly 'Erreur dans abs(x) : argument non numérique pour une fonction mathématique'... So, I am expliciting this option everywhere
-            gplot(myNetwork, displaylabels, label = network.vertex.names(myNetwork), 
+            ggnet2(myNetwork,  mode = "fruchtermanreingold", displaylabels, label = network.vertex.names(myNetwork), 
                   gmode = "graph", boxed.labels = TRUE)
         } else {
             print("There is absolutely no conflicts in this database.")
